@@ -1,0 +1,19 @@
+form{
+    width: 500px;
+    height: 30rem;
+    border-radius: 10px;
+  
+}
+ul{
+    color: red;
+}
+h4{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+#userPassword{
+  
+    border-color: black;
+}
