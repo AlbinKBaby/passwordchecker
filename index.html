@@ -15,58 +15,82 @@
                 <form  class="border border-black border-radius-5px p-5">             
                     <div class="mb-3">
                       <h4>Enter The Password</h4>
-                      <input type="text" class="form-control" id="userPassword"> 
+                      <input type="text" class="form-control" id="userPassword" oninput="checkStrong()"> 
                     </div>
+                   
                     <button type="button" onclick="checkPassword()" class="btn btn-primary">Check the Password</button>
                     <div>
-                        <ul >
-                            <li>Ensures the password is at least 8 characters long</li>
-                            <li>Ensures at least one lowercase letter</li>
-                            <li>Ensures at least one uppercase letter.</li>
-                            <li>Ensures at least one digit.</li>
-                            <li>Ensures at least one special character.</li>
-                            
+                        <ul style="color: orangered;">
+                            <li id="li1">Password contain atleast 8 characters long</li>
+                            <li id="li2">Password contain atleast one lowercase letter</li>
+                            <li id="li3">Password contain atleast one uppercase letter.</li>
+                            <li id="li4">Password contain atleast one digit.</li>
+                            <li id="li5">Password contain atleast one special character.</li>
                         </ul>
                     </div>
+                    <p id="result"></p>
                   </form>
             </div>
             <div class="col-md-3"></div>
         </div>
     </div>
     <script>
+        function checkStrong(){
+            let pswd = userPassword.value;
+            // alert(pswd)
+            const atoz = /[a-z]/.test(pswd);
+            const AtoZ = /[A-Z]/.test(pswd);
+            const char = /[^a-zA-Z0-9\s]/.test(pswd);
+            const num = /[0-9]/.test(pswd);
+            const len = pswd.length;
+
+            if(atoz){
+                document.getElementById("li2").style.color = "green" ;
+            }
+            if(AtoZ){
+                document.getElementById("li3").style.color = "green";
+            }
+            if(char){
+                document.getElementById("li5").style.color = "green";
+            }
+            if(num){
+                document.getElementById("li4").style.color = "green";
+            }
+            if(len>=8){
+                document.getElementById("li1").style.color = "green";
+            }
+            if(pswd!=''){
+                if(len<3){
+                    document.getElementById('result').innerHTML = "Weak";
+                    result.style.color ="red"
+                }
+                else if(atoz && Atoz && char && num && len<6 ){
+                      document.getElementById('result').innerHTML = "Medium";
+                    result.style.color ="orange"
+                }
+                else if(atoz && Atoz && char && num && len>8){
+                      document.getElementById('result').innerHTML = "Strong";
+                    result.style.color ="Green";
+                }
+            }
+        }
         function checkPassword(){
             let pswd = userPassword.value;
             // alert(pswd)
             const atoz = /[a-z]/.test(pswd);
             const AtoZ = /[A-Z]/.test(pswd);
             const char = /[^a-zA-Z0-9\s]/.test(pswd);
-            const num = /d/.test(pswd);
+            const num = /[0-9]/.test(pswd);
             const len = pswd.length;
-            if(atoz){
-                alert("abc")
-            }else{
-                alert("no abc")
+            if(atoz && AtoZ && char && num && len>=8){
+                document.getElementById('result').innerHTML = "Perfect Strong";
+                result.style.color ="Blue";
             }
-            if(AtoZ){
-                alert("ABC")
-            }else{
-                alert("no ABC")
+            else{
+                alert("Make the Password Strong")
             }
-            if(char){
-                alert("@#$$")
-            }else{
-                alert("no #$%")
-            }
-            if(num){
-                alert("123")
-            }else{
-                alert("no 123")
-            }
-            if(len<8){
-                alert("small")
-            }else{
-                alert("enough")
-            }
+          
+            
         }
     </script>
 </body>
