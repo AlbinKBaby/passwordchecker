@@ -1,13 +1,17 @@
+body{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIzav6ebKWBjvFFdnCqpEkTTtDHHPahNDcBRXT7DeQzo-v_DDXVk_NnnEIwJulnLMPUWA&usqp=CAU);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 form{
     width: 500px;
     height: 30rem;
     border-radius: 10px;
+    background-color: rgba(34, 34, 32, 0.637);
   
 }
-ul{
-    color: green;
-}
-h4{
+.heading{
+    color: white;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -16,4 +20,12 @@ h4{
 #userPassword{
     border-color: black;
     border-style: double;
+}
+#result{
+   font-size: 40px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+   
 }
