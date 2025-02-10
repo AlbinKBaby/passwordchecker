@@ -29,7 +29,7 @@ form{
     align-content: center;
    
 }
-@media only screen and (orientation: landscape) {
+@media only screen and (max-width: 568px) {
     body{
         background-size: cover;
 }
