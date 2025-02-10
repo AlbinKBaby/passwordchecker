@@ -29,3 +29,14 @@ form{
     align-content: center;
    
 }
+@media only screen and (orientation: landscape) {
+    body{
+        background-size: cover;
+}
+    form{
+        width: 400px;
+        height: 30rem;
+        border-radius: 10px;
+        background-color: rgba(34, 34, 32, 0.637);
+    }
+}
