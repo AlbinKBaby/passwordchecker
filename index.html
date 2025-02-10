@@ -43,32 +43,43 @@
             const char = /[^a-zA-Z0-9\s]/.test(pswd);
             const num = /[0-9]/.test(pswd);
             const len = pswd.length;
-
+            if(pswd!=''){
             if(atoz){
                 document.getElementById("li2").style.color = "green" ;
+            }else{
+                document.getElementById("li2").style.color = "red" ;
             }
             if(AtoZ){
                 document.getElementById("li3").style.color = "green";
+            }else{
+                document.getElementById("li3").style.color = "red" ;
             }
             if(char){
                 document.getElementById("li5").style.color = "green";
+            }else{
+                document.getElementById("li5").style.color = "red" ;
             }
             if(num){
                 document.getElementById("li4").style.color = "green";
+            }else{
+                document.getElementById("li4").style.color = "red" ;
             }
             if(len>=8){
                 document.getElementById("li1").style.color = "green";
+            }else{
+                document.getElementById("li1").style.color = "red" ;
             }
+        }
             if(pswd!=''){
                 if(len<3){
                     document.getElementById('result').innerHTML = "Weak";
                     result.style.color ="red"
                 }
-                else if(atoz && Atoz && char && num && len<6 ){
+                else if(len<6 ){
                       document.getElementById('result').innerHTML = "Medium";
                     result.style.color ="orange"
                 }
-                else if(atoz && Atoz && char && num && len>8){
+                else if(atoz && Atoz && char && num && len>=8){
                       document.getElementById('result').innerHTML = "Strong";
                     result.style.color ="Green";
                 }
