@@ -30,13 +30,13 @@ form{
    
 }
 @media only screen and (max-width: 568px) {
-    body{
+   
+    * body{
         background-image: url(https://i.pinimg.com/736x/9b/1e/c5/9b1ec57e6c3138a53edbfe5a4b59c5ba.jpg);
         background-size: cover;
-        /* height: 100%; */
-        background-color: black;
+      
 }
-    form{
+    #form{
        margin-top: 17%;
         width: 400px;
         height: 30rem;
